@@ -26,9 +26,9 @@ ul li {
 }
 
 .titulo {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 25pt;
-    color: rgb(45, 134, 190);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-bottom: 4px;
 }
