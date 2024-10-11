@@ -21,4 +21,29 @@ def contato():
 @app.route("/sobre", methods=('GET',))
 def sobre():
     return "<h1>Sobre...</h1>" 
-    
+
+
+# Dia 11/10
+# Multiplicação
+@app.route("/area", methods=('GET',))
+def area():
+    altura = float(request.args.get('a'))
+    largura = float(request.args.get('l'))
+    return f"""<h1>A área informada> L={largura}*A={altura} => Área={largura*altura}</h1>"""
+
+# Número Par ou Impar
+@app.route("/numero", methods=('GET',))
+def numero():
+  numero = float(request.args.get('n'))
+  if numero % 2 == 0:
+    return f"O número é par."
+  else:
+    return f"O número é ímpar."
+
+# Nome e Sobrenome 
+@app.route("/nome", methods=('GET',))
+def nome():
+  nome = request.args.get('nome')
+  sobrenome = request.args.get('sobrenome')
+  return f"""<h1> Resultado </h1>
+  <p>{sobrenome},{nome}</p>"""
