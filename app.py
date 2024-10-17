@@ -25,10 +25,8 @@ def sobre():
 
 # Dia 11/10
 # Multiplicação
-@app.route("/area", methods=('GET',))
-def area():
-    altura = float(request.args.get('a'))
-    largura = float(request.args.get('l'))
+@app.route("/area/<float:altura>/<float:largura>", methods=('GET',))
+def area(altura: float, largura: float):
     return f"""<h1>A área informada> L={largura}*A={altura} => Área={largura*altura}</h1>"""
 
 # Número Par ou Impar
