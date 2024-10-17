@@ -30,9 +30,8 @@ def area(altura: float, largura: float):
     return f"""<h1>A área informada> L={largura}*A={altura} => Área={largura*altura}</h1>"""
 
 # Número Par ou Impar
-@app.route("/numero", methods=('GET',))
-def numero():
-  numero = float(request.args.get('n'))
+@app.route("/numero/<float:parimpar>", methods=('GET',))
+def numero(parimpar: float):
   if numero % 2 == 0:
     return f"O número é par."
   else:
@@ -45,3 +44,9 @@ def nome():
   sobrenome = request.args.get('sobrenome')
   return f"""<h1> Resultado </h1>
   <p>{sobrenome},{nome}</p>"""
+
+# 17/10
+# Potencia
+@app.route("/potencia/<float:numero>/<float:elevado>", methods=('GET',))
+def potencia(numero: float, elevado: float):
+    return f"""<h1>A potencia é> N={numero}** E={elevado} => Potencia={numero**elevado}</h1>"""
