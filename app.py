@@ -50,3 +50,12 @@ def nome():
 @app.route("/potencia/<float:numero>/<float:elevado>", methods=('GET',))
 def potencia(numero: float, elevado: float):
     return f"""<h1>A potencia é> N={numero}** E={elevado} => Potencia={numero**elevado}</h1>"""
+
+# 18/10
+# Tabuada
+@app.route("/tabuada/<int:numero>", methods=('GET',))
+def tabuada(numero: int):
+  html = "<ul>"
+  for i in range(1,11):
+    html+=f"<li>{numero}x{i}={numero*i}</li>"
+  return html + "</ul>"
