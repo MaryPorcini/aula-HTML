@@ -53,7 +53,11 @@ def potencia(numero: float, elevado: float):
 
 # 18/10
 # Tabuada
-@app.route("/tabuada/<int:numero>", methods=('GET',))
-def tabuada(numero):
+@app.route("/tabuada")
+@app.route("/tabuada/<numero>", methods=("GET", ))
+def tabuada(numero = None):
 
+  if 'numero' in request.args:
+    numero = int(request.args.get('numero'))
+  
   return render_template('tabuada.html',numero=numero)
